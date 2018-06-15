@@ -1,2 +1,0 @@
-# SuiviLectureReact
-Created with CodeSandbox
