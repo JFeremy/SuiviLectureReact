@@ -1,0 +1,7 @@
+
+https://material-ui.com/style/color/
+
+https://fontawesome.com/
+
+https://reacttraining.com/react-router/web/example/auth-workflow
+

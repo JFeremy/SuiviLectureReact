@@ -1,16 +1,26 @@
-//Projet Suivi Lecture
-//REACT
+// PROJET DE SUIVI DE LECTURE
+// REACT
 import React from "react";
 import { render } from "react-dom";
-import { BrowserRouter, Match, Miss } from "react-router";
-
-//COMPONENTS
-
+//Router
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //CSS
-import "./styles.css";
+import "./index.css";
+// COMPONENTS
+import App from "./Components/App";
+import Connexion from "./Components/Connexion";
+import NotFound from "./Components/NotFound";
 
 const Root = () => {
-  return <div />;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Connexion} />
+        <Route path="/library/:pseudo" component={App} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+  );
 };
 
 render(<Root />, document.getElementById("root"));

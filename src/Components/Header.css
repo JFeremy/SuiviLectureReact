@@ -1,0 +1,21 @@
+header {
+  background-color: #01579b;
+  padding: 10px 20px;
+  margin: -10px -10px 0px -10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Dekko";
+  text-shadow: 1px 1px 0px #ddd;
+  text-transform: uppercase;
+}
+nav > .buttonMenu {
+  font-size: 1.5em;
+}
+nav > .dropdownMenu {
+  display: none;
+}
