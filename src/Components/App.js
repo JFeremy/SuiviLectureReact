@@ -1,40 +1,74 @@
 // REACT
 import React from "react";
 import PropTypes from "prop-types";
-// COMPONENTS
+import { Redirect } from "react-router-dom";
 import Header from "./Header";
+import HotRelease from "./HotRelease";
+import Footer from "./Footer";
 
 class App extends React.Component {
   // STATE
   state = {
-    lectures: {},
-    affichage: "grille"
+    books: {},
+    view: "grid",
+    pseudo: ""
   };
 
   // CYCLE DE VIE REACT
+  componentWillMount() {
+    this.setState({ pseudo: localStorage.getItem("pseudo") });
+  }
+
   // FONCTIONS
-  changerAffichage = () => {
-    console.log(this.state.affichage);
-    const aff = this.state.affichage === "grille" ? "liste" : "grille";
+  changeView = () => {
+    console.log(this.state.view);
+
     this.setState({
-      affichage: aff
+      view: this.state.view === "grid" ? "list" : "grid"
     });
+  };
+  add = () => {
+    console.log("add");
+  };
+  update = () => {
+    console.log("update");
+  };
+
+  logOut = () => {
+    console.log("logOut");
+    localStorage.removeItem("pseudo");
+    this.setState({ pseudo: localStorage.getItem("pseudo", null) });
   };
 
   // RENDER
-  render() {
+  renderRedirect = () => {
     return (
-      <div>
-        <Header
-          pseudo={this.props.match.params.pseudo}
-          affichage={this.state.affichage}
-          changerAffichage={this.changerAffichage}
-        />
-        <div className="box">
-          <h1>{this.props.match.params.pseudo}</h1>
-        </div>
-      </div>
+      <Redirect
+        to={{
+          pathname: `/`
+        }}
+      />
     );
+  };
+
+  render() {
+    if (!this.state.pseudo) {
+      return <div>{this.renderRedirect()}</div>;
+    } else {
+      return (
+        <div>
+          <Header
+            pseudo={this.state.pseudo}
+            view={this.state.view}
+            changeView={this.changeView}
+          />
+          <div className="box">
+            <HotRelease />
+          </div>
+          <Footer add={this.add} update={this.update} logOut={this.logOut} />
+        </div>
+      );
+    }
   }
 
   // PROPTYPES

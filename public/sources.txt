@@ -5,3 +5,11 @@ https://fontawesome.com/
 
 https://reacttraining.com/react-router/web/example/auth-workflow
 
+https://blog.hellojs.org/fetching-api-data-with-react-js-460fe8bbf8f2
+
+https://www.supinfo.com/articles/single/5632-creer-une-application-web-avec-reactjs-spring-data-rest
+
+https://rss2json.com/docs
+
+https://rss2json.com/#rss_url=https%3A%2F%2Fwww.japscan.cc%2Frss%2F
+

@@ -1,46 +1,44 @@
 .connexionBox {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-.connexion {
-  max-width: 500px;
+  flex-direction: column;
   font-size: 24px;
-  font-family: "Dekko";
+  font-family: "Indie Flower";
+  min-height: 100vh;
+  justify-content: center;
 }
-.connexion > h1 {
-  font-family: "Indie Flower", cursive;
+.connexionBox h1,
+.connexionBox h3 {
   text-align: center;
-  font-size: 10vh;
 }
-.connexion > * {
+.connexionBox > * {
   width: 100%;
 }
-.connexion > input {
-  box-sizing: border-box;
-  font-size: 26px;
-  background-color: #fff;
-  border-width: 0 0 5px 0;
-  outline: none;
-  border-left: 5px solid;
-  border-right: 5px solid;
-  border-top: 5px solid;
-  border-color: #01579b;
-  border-radius: 20px 20px 0 0;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+.connexionLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.connexion > button {
+.connexionLinks > button {
   font-size: 20px;
-  border: none;
   color: white;
-  background-color: #01579b;
-  padding: 10px;
   cursor: pointer;
-  border-radius: 0 0 20px 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-family: Dekko;
+  margin: 10px 0px;
+  display: flex;
 }
-.connexion > p {
-  font-size: 20px;
+.connexionLinks > button > .logoButton {
+  padding: 2px 5px 0px 20px;
+}
+.connexionLinks > .google-button {
+  background-color: #dd4b39;
+}
+.connexionLinks > .facebook-button {
+  background-color: #3b5998;
+}
+.connexionLinks > .twitter-button {
+  background-color: #00aced;
 }

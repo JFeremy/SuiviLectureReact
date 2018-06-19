@@ -10,7 +10,7 @@ class Header extends React.Component {
   // STATE
   // CYCLE DE VIE REACT
   // FONCTIONS
-  convertirPseudo = pseudo => {
+  convertPseudo = pseudo => {
     return /[aeiouy]/i.test(pseudo[0]) ? `d'${pseudo}` : `de ${pseudo}`;
   };
 
@@ -19,29 +19,11 @@ class Header extends React.Component {
     return (
       <header>
         <nav>
-          <div className="buttonMenu">
-            <FontAwesomeIcon icon={faIcon.faBars} />{" "}
-          </div>
+          <h1>La bibliothèque {this.convertPseudo(this.props.pseudo)}</h1>
 
-          <ul className="dropdownMenu">
-            <li>Ajouter</li>
-            <li>Modifier</li>
-            <li>Profil</li>
-            <li>Déconnexion</li>
-          </ul>
-          <h1>La bibliothèque {this.convertirPseudo(this.props.pseudo)}</h1>
-
-          <div
-            className="buttonMenu"
-            onClick={e => this.props.changerAffichage()}
-          >
+          <div className="buttonVue" onClick={e => this.props.changeView()}>
             <FontAwesomeIcon
-              className="buttonMenu"
-              icon={
-                this.props.affichage === "grille"
-                  ? faIcon.faThList
-                  : faIcon.faTh
-              }
+              icon={this.props.view === "grid" ? faIcon.faThList : faIcon.faTh}
             />
           </div>
         </nav>
@@ -51,7 +33,9 @@ class Header extends React.Component {
 
   // PROPTYPES
   static propTypes = {
-    pseudo: PropTypes.string.isRequired
+    pseudo: PropTypes.string.isRequired,
+    view: PropTypes.string.isRequired,
+    changeView: PropTypes.func.isRequired
   };
 }
 

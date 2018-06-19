@@ -4,7 +4,11 @@ import React from "react";
 import "./NotFound.css";
 
 const NotFound = () => {
-  return <h2 className="notFound">Oup's cette page n'existe pas !</h2>;
+  return (
+    <div>
+      <h2 className="notFound">Oup's cette page n'existe pas !</h2>
+    </div>
+  );
 };
 
 export default NotFound;

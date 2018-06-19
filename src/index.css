@@ -5,9 +5,15 @@
   text-align: center;
   font-family: "Indie Flower", cursive;
 }
-/*font-family: sans-serif;*/
-
+html {
+  box-sizing: border-box;
+}
 body {
   background-color: #212121;
   color: #ddd;
+  display: flex;
+  font-family: "Dekko";
+}
+body > div {
+  width: 100%;
 }
