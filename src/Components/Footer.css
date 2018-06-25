@@ -1,6 +1,5 @@
 footer {
-  background-color: #1a237e;
-  margin: 0px -8px;
+  background-color: #ff7043;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -11,12 +10,13 @@ footer {
 }
 
 footer > .iconFooter {
+  color: white;
   font-size: 1.5em;
   width: 30%;
   text-align: center;
 }
 .iconFooter:hover {
-  color: #304ffe;
+  color: #c63f17;
   transform: rotate(360deg) scale(1.2);
   transition: all 0.5s;
 }

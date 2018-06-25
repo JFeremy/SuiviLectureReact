@@ -6,6 +6,7 @@ import faIcon from "@fortawesome/fontawesome-free-brands";
 import { Redirect } from "react-router-dom";
 //CSS
 import "./Connexion.css";
+import img from "../Images/background.jpg";
 
 class Connexion extends React.Component {
   state = {
@@ -50,6 +51,7 @@ class Connexion extends React.Component {
     } else {
       console.log(authData);
       localStorage.setItem("pseudo", authData.user.displayName);
+      localStorage.setItem("uid", authData.user.uid);
       this.setState({
         pseudo: authData.user.displayName
       });
@@ -73,10 +75,45 @@ class Connexion extends React.Component {
     }
 
     return (
-      <div className="connexionBox">
+      <div
+        className="connexionBox"
+        style={{ "background-image": `url(${img})` }}
+      >
         <div className="connexionTitle">
           <h1>Le suivi de mes lectures</h1>
         </div>
+        <div className="connexionLinks">
+          <button
+            className="facebook-button"
+            onClick={() => this.connexion("facebook")}
+          >
+            <FontAwesomeIcon icon={faIcon.faFacebookF} />
+          </button>
+          <button
+            className="twitter-button"
+            onClick={() => this.connexion("twitter")}
+          >
+            <FontAwesomeIcon icon={faIcon.faTwitter} />
+          </button>
+          <button
+            className="google-button"
+            onClick={() => this.connexion("google")}
+          >
+            <FontAwesomeIcon icon={faIcon.faGoogle} />
+          </button>
+        </div>
+        <div className="connexionSubtitle">
+          <h3>Il suffit de se connecter pour gérer ses lectures !</h3>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Connexion;
+
+/*
+
         <div className="connexionLinks">
           <button
             className="facebook-button"
@@ -106,12 +143,4 @@ class Connexion extends React.Component {
             </div>
           </button>
         </div>
-        <div className="connexionSubtitle">
-          <h3>Il suffit de se connecter pour gérer ses lectures !</h3>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Connexion;
+*/

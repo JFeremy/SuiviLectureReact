@@ -1,0 +1,31 @@
+.hotReleaseBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: fit-content;
+}
+h3.release-title {
+  margin: 0;
+}
+h3.release-title a {
+  color: white;
+  text-decoration: none;
+}
+.release-list h4 {
+  margin: 0;
+  color: #ffa270;
+}
+li.chapter-release * {
+  color: white;
+  text-decoration: none;
+  font-size: small;
+}
+ul.release-list,
+ul.release-list * {
+  list-style-type: none;
+  padding-left: 0px;
+}
+li.chapter-release {
+  padding-left: 20px;
+}

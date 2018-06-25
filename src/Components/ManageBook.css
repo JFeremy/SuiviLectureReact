@@ -1,0 +1,149 @@
+.action {
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(198, 63, 23, 0.9);
+}
+.action-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+.action * {
+  font-family: Dekko;
+}
+.action-card button {
+  border-radius: 2px;
+}
+.action-card .input-form > input {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Dekko;
+  font-size: 25px;
+  height: 54px;
+  border: none;
+  background-color: #ffa270;
+}
+.action-card .input-form input[type="number"]::-webkit-inner-spin-button,
+.action-card .input-form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.action-card .changeChapter {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.action-card .changeChapter button {
+  width: 100%;
+  height: 4em;
+  background-color: #ffa270;
+  border: none;
+  color: #c63f17;
+  padding: 0;
+}
+.action-card .updateChapter,
+.add-form .add-book {
+  width: 100%;
+  background-color: #ffa270;
+  color: black;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px 10px 0% 0%;
+  font-size: large;
+  font-weight: bolder;
+}
+.action-card .changeChapter button.plus-button {
+  box-shadow: -3px 2px 7px 2px red;
+  border-radius: 10px 0 0 10px;
+  z-index: 1;
+}
+.action-card .changeChapter button.minus-button {
+  box-shadow: 3px 2px 7px 2px red;
+  border-radius: 0 10px 10px 0;
+  z-index: 1;
+}
+.action-card .changeChapter button.plus-button:active,
+.action-card .changeChapter button.plus-button:hover {
+  box-shadow: inset -3px 2px 7px 2px red;
+}
+.action-card .changeChapter button.minus-button:active,
+.action-card .changeChapter button.minus-button:hover {
+  box-shadow: inset 3px 2px 7px 2px red;
+}
+
+form.add-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-form .input-form,
+.change-form .input-form {
+  margin-bottom: 10px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+.add-form .input-form > *,
+.change-form .input-form > * {
+  height: 40px !important;
+  margin-bottom: 10px;
+}
+.add-form .input-form .input-tag,
+.change-form .input-form .input-tag {
+  padding: 0px 10px;
+  color: black;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 10px 0px 0px 10px;
+}
+.add-form .input-form input,
+.change-form .input-form input {
+  font-size: large;
+  padding: 0px 5px;
+  border-radius: 0px 10px 10px 0px;
+  border: none;
+}
+.change-form .book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.change-form .img-form {
+  padding-right: 20px;
+}
+.change-form .img-form img {
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 13px 0px white;
+}
+.choose-action button {
+  width: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: large;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid;
+}
+.choose-action .active,
+.choose-action button:hover {
+  color: white !important;
+}

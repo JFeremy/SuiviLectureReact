@@ -20,8 +20,10 @@ class Footer extends React.Component {
           <FontAwesomeIcon icon={faIcon.faPlus} />
         </div>
         <div className="divider" />
-        <div className="iconFooter" onClick={() => this.props.update()}>
-          <FontAwesomeIcon icon={faIcon.faEdit} />
+        <div className="iconFooter" onClick={() => this.props.changeView()}>
+          <FontAwesomeIcon
+            icon={this.props.view === "list" ? faIcon.faThList : faIcon.faTh}
+          />
         </div>
         <div className="divider" />
         <div className="iconFooter" onClick={() => this.props.logOut()}>
@@ -34,7 +36,7 @@ class Footer extends React.Component {
   // PROPTYPES
   static propTypes = {
     add: PropTypes.func.isRequired,
-    update: PropTypes.func.isRequired,
+    changeView: PropTypes.func.isRequired,
     logOut: PropTypes.func.isRequired
   };
 }

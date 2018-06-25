@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Dekko");
+@import url("https://fonts.googleapis.com/css?family=Dekko");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 
 .App {
   text-align: center;
@@ -7,12 +7,14 @@
 }
 html {
   box-sizing: border-box;
+  background-color: #212121 !important;
 }
 body {
-  background-color: #212121;
+  background-color: #212121 !important;
   color: #ddd;
   display: flex;
   font-family: "Dekko";
+  margin: 0;
 }
 body > div {
   width: 100%;

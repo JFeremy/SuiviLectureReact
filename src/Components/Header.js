@@ -19,13 +19,7 @@ class Header extends React.Component {
     return (
       <header>
         <nav>
-          <h1>La bibliothèque {this.convertPseudo(this.props.pseudo)}</h1>
-
-          <div className="buttonVue" onClick={e => this.props.changeView()}>
-            <FontAwesomeIcon
-              icon={this.props.view === "grid" ? faIcon.faThList : faIcon.faTh}
-            />
-          </div>
+          <h1>La mangathèque {this.convertPseudo(this.props.pseudo)}</h1>
         </nav>
       </header>
     );
@@ -33,9 +27,7 @@ class Header extends React.Component {
 
   // PROPTYPES
   static propTypes = {
-    pseudo: PropTypes.string.isRequired,
-    view: PropTypes.string.isRequired,
-    changeView: PropTypes.func.isRequired
+    pseudo: PropTypes.string.isRequired
   };
 }
 
