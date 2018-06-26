@@ -1,5 +1,5 @@
 .action {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   justify-content: center;
   display: flex;
@@ -10,14 +10,15 @@
   z-index: 1;
   background-color: rgba(198, 63, 23, 0.9);
 }
+.action * {
+  font-family: Dekko;
+  text-transform: capitalize;
+}
 .action-card {
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
-}
-.action * {
-  font-family: Dekko;
 }
 .action-card button {
   border-radius: 2px;
@@ -38,11 +39,13 @@
   margin: 0;
 }
 
-.action-card .changeChapter {
+.action-card .changeChapter,
+.action-card .changeImage {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  flex-direction: row;
 }
 .action-card .changeChapter button {
   width: 100%;
@@ -52,7 +55,7 @@
   color: #c63f17;
   padding: 0;
 }
-.action-card .updateChapter,
+
 .add-form .add-book {
   width: 100%;
   background-color: #ffa270;
@@ -63,6 +66,7 @@
   font-size: large;
   font-weight: bolder;
 }
+
 .action-card .changeChapter button.plus-button {
   box-shadow: -3px 2px 7px 2px red;
   border-radius: 10px 0 0 10px;
@@ -90,19 +94,19 @@ form.add-form {
   align-items: center;
 }
 .add-form .input-form,
-.change-form .input-form {
+.changeImage .input-form {
   margin-bottom: 10px;
   border: none;
   display: flex;
   flex-direction: row;
 }
 .add-form .input-form > *,
-.change-form .input-form > * {
+.changeImage .input-form > * {
   height: 40px !important;
   margin-bottom: 10px;
 }
 .add-form .input-form .input-tag,
-.change-form .input-form .input-tag {
+.changeImage .input-form .input-tag {
   padding: 0px 10px;
   color: black;
   background-color: white;
@@ -112,27 +116,28 @@ form.add-form {
   border-radius: 10px 0px 0px 10px;
 }
 .add-form .input-form input,
-.change-form .input-form input {
+.changeImage .input-form input {
   font-size: large;
   padding: 0px 5px;
   border-radius: 0px 10px 10px 0px;
   border: none;
 }
-.change-form .book-info {
+.changeImage .book-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.change-form .img-form {
+.changeImage .img-form {
   padding-right: 20px;
 }
-.change-form .img-form img {
+.changeImage .img-form img {
   height: 100px;
   border-radius: 5px;
   box-shadow: 0px 0px 13px 0px white;
 }
-.choose-action button {
+.choose-action .chooseChapter,
+.choose-action .chooseImage {
   width: 100px;
   text-align: center;
   align-items: center;
@@ -146,4 +151,19 @@ form.add-form {
 .choose-action .active,
 .choose-action button:hover {
   color: white !important;
+}
+.action .hide-actions {
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+}
+.action .action-card button.delete-book {
+  color: white;
+  margin-bottom: 5px;
+  background-color: red;
+  border: none;
+  font-size: larger;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+  box-shadow: 0px 2px 10px 2px black;
 }

@@ -1,24 +1,32 @@
 // REACT
 import React from "react";
-import PropTypes from "prop-types";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faIcon from "@fortawesome/fontawesome-free-solid";
 // CSS
 import "./HotRelease.css";
 
 class HotRelease extends React.Component {
+  static defaultProps = {};
+  static propTypes = {};
+
   // STATE
   state = {
-    booksRelease: {}
+    booksRelease: {},
+    show: false
   };
   // FONCTION
+  showNews = () => {
+    this.setState({
+      show: !this.state.show
+    });
+  };
   // CYCLE DE VIE REACT
   componentWillMount() {
     fetch(
       "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.japscan.cc%2Frss%2F"
     )
       .then(results => {
-        let data = results.json().then(data => {
+        results.json().then(data => {
           //console.log(data.items);
           var booksRelease = {};
 
@@ -47,14 +55,6 @@ class HotRelease extends React.Component {
         console.log(err);
       });
   }
-  /*
-
-            <li key={key}>
-              <a href={this.state.booksRelease[key].link} target="_blank">
-                {this.state.booksRelease[key].title}
-              </a>
-            </li>
-  */
 
   // RENDER
   render() {
@@ -77,20 +77,22 @@ class HotRelease extends React.Component {
     ));
     return (
       <div className="hotReleaseBox">
-        <h3 className="release-title">
-          <a href="https://www.japscan.cc/" target="_blank">
-            Les sorties récentes
-          </a>
-        </h3>
-        <ul className="release-list">{books}</ul>
+        <div className="release-title">
+          <h3>
+            <a href="https://www.japscan.cc/" target="_blank">
+              Les sorties récentes
+            </a>
+          </h3>
+          <button className="show-news" onClick={e => this.showNews()}>
+            <FontAwesomeIcon
+              icon={this.state.show ? faIcon.faAngleUp : faIcon.faAngleDown}
+            />
+          </button>
+        </div>
+        {this.state.show && <ul className="release-list">{books}</ul>}
       </div>
     );
   }
-
-  // PROPTYPES
-  static propTypes = {
-    //add: PropTypes.func.isRequired
-  };
 }
 
 export default HotRelease;

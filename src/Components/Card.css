@@ -18,8 +18,9 @@
 }
 .grid-card .info-card .img-info-card img {
   height: 8em;
+  width: 8em;
   border-radius: 10px;
-  box-shadow: 2px 2px 3px 1px white;
+  box-shadow: 3px 3px 5px 1px #545454;
 }
 .grid-card .info-card .txt-info-card {
   display: none;
@@ -39,6 +40,7 @@
 }
 .list-card .info-card .img-info-card > img {
   height: 5em;
+  width: 5em;
   border-radius: 5px;
 }
 .list-card .info-card .txt-info-card {
@@ -47,14 +49,26 @@
   display: flex;
   margin-right: 5px;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: whitesmoke;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .info-card .txt-info-card h4 {
   text-align: right;
+  color: #222;
+}
+.info-card .txt-info-card h3 {
+  text-align: left;
+}
+.info-card .txt-info-card h3 a {
+  color: white;
+  text-shadow: 1px 1px 1px #222;
+  text-decoration: none;
 }
 .info-card .txt-info-card > * {
   margin: 0px;
+  text-transform: capitalize;
 }
 .list-card .info-card {
   box-shadow: 1px 1px 4px 0px white;

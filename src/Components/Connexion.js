@@ -14,11 +14,9 @@ class Connexion extends React.Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("pseudo")) {
-      this.setState({
-        pseudo: localStorage.getItem("pseudo")
-      });
-    }
+    this.setState({
+      pseudo: localStorage.getItem("pseudo")
+    });
   }
 
   connexion = provider => {
@@ -34,6 +32,8 @@ class Connexion extends React.Component {
         break;
       case "google":
         authProvider = new base.auth.GoogleAuthProvider();
+        break;
+      default:
         break;
     }
 
@@ -70,15 +70,10 @@ class Connexion extends React.Component {
   };
 
   render() {
-    if (this.state.pseudo) {
-      return <div>{this.renderRedirect()}</div>;
-    }
-
-    return (
-      <div
-        className="connexionBox"
-        style={{ "background-image": `url(${img})` }}
-      >
+    return this.state.pseudo ? (
+      <div>{this.renderRedirect()}</div>
+    ) : (
+      <div className="connexionBox" style={{ backgroundImage: `url(${img})` }}>
         <div className="connexionTitle">
           <h1>Le suivi de mes lectures</h1>
         </div>
@@ -111,36 +106,3 @@ class Connexion extends React.Component {
 }
 
 export default Connexion;
-
-/*
-
-        <div className="connexionLinks">
-          <button
-            className="facebook-button"
-            onClick={() => this.connexion("facebook")}
-          >
-            Me connecter avec Facebook
-            <div className="logoButton">
-              <FontAwesomeIcon icon={faIcon.faFacebook} />
-            </div>
-          </button>
-          <button
-            className="twitter-button"
-            onClick={() => this.connexion("twitter")}
-          >
-            Me connecter avec Twitter
-            <div className="logoButton">
-              <FontAwesomeIcon icon={faIcon.faTwitterSquare} />
-            </div>
-          </button>
-          <button
-            className="google-button"
-            onClick={() => this.connexion("google")}
-          >
-            Me connecter avec Google
-            <div className="logoButton">
-              <FontAwesomeIcon icon={faIcon.faGooglePlusSquare} />
-            </div>
-          </button>
-        </div>
-*/

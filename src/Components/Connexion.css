@@ -21,9 +21,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
 .connexionLinks > button {
+  padding: 10px;
   font-size: 1.5em;
   justify-content: center;
   cursor: pointer;
