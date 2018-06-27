@@ -6,7 +6,6 @@ import faIcon from "@fortawesome/fontawesome-free-brands";
 import { Redirect } from "react-router-dom";
 //CSS
 import "./Connexion.css";
-import img from "../Images/background.jpg";
 
 class Connexion extends React.Component {
   state = {
@@ -73,7 +72,7 @@ class Connexion extends React.Component {
     return this.state.pseudo ? (
       <div>{this.renderRedirect()}</div>
     ) : (
-      <div className="connexionBox" style={{ backgroundImage: `url(${img})` }}>
+      <div className="connexionBox">
         <div className="connexionTitle">
           <h1>Le suivi de mes lectures</h1>
         </div>

@@ -5,6 +5,7 @@
   font-family: "Indie Flower";
   min-height: 100vh;
   justify-content: center;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/scanmanga-8152c.appspot.com/o/background.jpg?alt=media&token=3ec6323f-2711-4644-a220-32e073e199e4");
   background-repeat: no-repeat;
   background-size: cover;
 }
