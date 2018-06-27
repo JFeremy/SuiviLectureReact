@@ -18,3 +18,5 @@ http://apprendre-le-js.com/electron-angular-bootstrap-desktop-music-player/
 https://www.dareboost.com/fr/home
 
 https://app.netlify.com/sites/suivilecturejapscan/overview
+
+https://anthonywelc.com/consignes-de-la-semaine/
