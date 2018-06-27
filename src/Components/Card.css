@@ -34,6 +34,7 @@
   padding: 2px;
   background-color: #ff7043;
   border-radius: 5px;
+  box-shadow: 1px 1px 4px 0px white;
 }
 .list-card .info-card .img-info-card {
   margin-right: 10px;
@@ -69,9 +70,6 @@
 .info-card .txt-info-card > * {
   margin: 0px;
   text-transform: capitalize;
-}
-.list-card .info-card {
-  box-shadow: 1px 1px 4px 0px white;
 }
 .change-form {
   display: flex;
