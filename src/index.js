@@ -16,7 +16,7 @@ const Root = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Connexion} />
-        <Route path="/library/:pseudo" component={App} />
+        <Route path="/" component={App} />
         <Route component={NotFound} />
       </Switch>
     </Router>
