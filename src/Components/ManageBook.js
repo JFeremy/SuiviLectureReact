@@ -21,12 +21,12 @@ class ManageBook extends React.Component {
     show: PropTypes.bool.isRequired,
     action: PropTypes.string.isRequired,
     book: PropTypes.object.isRequired,
-    updateBook: PropTypes.func.isRequired
+    updateBook: PropTypes.func.isRequired,
+    makeActions: PropTypes.func.isRequired
   };
 
   // STATE
   state = {
-    show: false,
     action: "add",
     book: {}
   };
@@ -43,9 +43,6 @@ class ManageBook extends React.Component {
   changeAction = action => {
     this.setState({ action: action });
   };
-  hideAction = () => {
-    this.setState({ show: false });
-  };
 
   deleteBook = () => {
     base
@@ -55,21 +52,20 @@ class ManageBook extends React.Component {
     this.hideAction();
     this.props.updateBook(this.props.book.id, null, null, null, true);
   };
+
   saveImage = (urlImg, nameImg) => {
-    console.log(urlImg);
     const user = localStorage.getItem("uid");
     // Enregistrement de l'image
     base
       .storage()
-      .ref()
-      .child(`${user}/${nameImg}`)
+      .ref(`${user}/${nameImg}`)
       .putString(urlImg, "data_url")
       .then(function(snapshot) {
         console.log("Uploaded a data_url string!");
-      }); /*
+      })
       .catch(function(error) {
         console.log(error);
-      });*/
+      });
   };
 
   //RENDER
@@ -97,7 +93,10 @@ class ManageBook extends React.Component {
           >
             IMAGE
           </button>
-          <button className="hide-actions" onClick={() => this.hideAction()}>
+          <button
+            className="hide-actions"
+            onClick={() => this.props.makeActions("hideAction")}
+          >
             <FontAwesomeIcon icon={faIcon.faAngleDown} />
           </button>
         </div>
@@ -106,7 +105,7 @@ class ManageBook extends React.Component {
             book={this.props.book}
             saveImage={this.saveImage}
             deleteBook={this.deleteBook}
-            hideAction={this.hideAction}
+            makeActions={() => this.props.makeActions("hideAction")}
           />
         )}
         {this.state.action === "chapter" && (
@@ -122,7 +121,10 @@ class ManageBook extends React.Component {
   render() {
     if (this.state.show) {
       return this.state.action === "add" ? (
-        <AddBook saveImage={this.saveImage} hideAction={this.hideAction} />
+        <AddBook
+          saveImage={this.saveImage}
+          makeActions={() => this.props.makeActions("hideAction")}
+        />
       ) : (
         this.renderUpdateBook()
       );

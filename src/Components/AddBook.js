@@ -10,7 +10,7 @@ class AddBook extends React.Component {
   static defaultProps = {};
   static propTypes = {
     saveImage: PropTypes.func.isRequired,
-    hideAction: PropTypes.func.isRequired
+    makeActions: PropTypes.func.isRequired
   };
 
   // STATE
@@ -29,23 +29,30 @@ class AddBook extends React.Component {
 
   addBook = event => {
     event.preventDefault();
+    const user = localStorage.getItem("uid");
     let elementsUrl = this.link.value.split("/");
-    this.props.saveImage(this.thumbnail.value, elementsUrl[4]);
-
-    const book = {
-      id: elementsUrl[4],
-      title: elementsUrl[4].replace(/-/g, " "),
-      chapter: this.chapter.value
-    };
-
-    base
+    let chapter = this.chapter.value;
+    let storageRef = base.storage().ref(`${user}/${elementsUrl[4]}`);
+    let databaseRef = base
       .database()
-      .ref(`${localStorage.getItem("uid")}/${book.id}`)
-      .set(book);
+      .ref(`${localStorage.getItem("uid")}/${elementsUrl[4]}`);
 
-    //console.log(book);
-    this.addBookForm.reset();
-    this.props.hideAction();
+    storageRef
+      .putString(this.thumbnail.value, "data_url")
+      .then(function(snapshot) {
+        console.log("Uploaded a data_url string!");
+        databaseRef.set({
+          id: elementsUrl[4],
+          title: elementsUrl[4].replace(/-/g, " "),
+          chapter: chapter
+        });
+        console.log(`Manga: ${elementsUrl[4].replace(/-/g, " ")} ajouté`);
+        this.addBookForm.reset();
+        this.props.makeActions("hideAction");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   };
 
   //RENDER
@@ -63,7 +70,7 @@ class AddBook extends React.Component {
               <button
                 type="button"
                 className="hide-actions"
-                onClick={e => this.props.hideAction()}
+                onClick={() => this.props.makeActions()}
               >
                 <FontAwesomeIcon icon={faIcon.faAngleDown} />
               </button>

@@ -14,7 +14,7 @@ class UpdateImage extends React.Component {
     book: PropTypes.object.isRequired,
     saveImage: PropTypes.func.isRequired,
     deleteBook: PropTypes.func.isRequired,
-    hideAction: PropTypes.func.isRequired
+    makeActions: PropTypes.func.isRequired
   };
   // STATE
   // CYCLE DE VIE REACT
@@ -53,7 +53,7 @@ class UpdateImage extends React.Component {
           onClick={() => {
             if (window.confirm("Confirmer la suppression?")) {
               this.props.deleteBook();
-              this.props.hideAction();
+              this.props.makeActions("hideAction");
             }
           }}
           className="delete-book"

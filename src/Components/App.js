@@ -149,6 +149,7 @@ class App extends React.Component {
             show={this.state.actionShow}
             book={this.state.book}
             action={this.state.action}
+            makeActions={this.makeActions}
             updateBook={this.updateBook}
           />
         </div>
