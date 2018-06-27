@@ -1,8 +1,6 @@
 // REACT
 import React from "react";
 import PropTypes from "prop-types";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import faIcon from "@fortawesome/fontawesome-free-solid";
 // CSS
 import "./Header.css";
 

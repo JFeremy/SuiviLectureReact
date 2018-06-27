@@ -1,6 +1,5 @@
 //REACT
 import React from "react";
-import base from "../Base";
 import PropTypes from "prop-types";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faIcon from "@fortawesome/fontawesome-free-solid";

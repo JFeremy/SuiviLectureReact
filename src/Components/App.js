@@ -1,7 +1,6 @@
 // REACT
 import React from "react";
 import base from "../Base";
-import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import Header from "./Header";
 import ManageBook from "./ManageBook";
