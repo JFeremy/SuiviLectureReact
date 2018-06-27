@@ -47,12 +47,12 @@ class AddBook extends React.Component {
           chapter: chapter
         });
         console.log(`Manga: ${elementsUrl[4].replace(/-/g, " ")} ajouté`);
-        this.addBookForm.reset();
-        this.props.makeActions("hideAction");
       })
       .catch(function(error) {
         console.log(error);
       });
+    this.addBookForm.reset();
+    this.props.makeActions("hideAction");
   };
 
   //RENDER
