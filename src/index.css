@@ -19,3 +19,6 @@ body {
 body > div {
   width: 100%;
 }
+body *:focus {
+  outline: none;
+}
