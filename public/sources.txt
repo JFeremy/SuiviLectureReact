@@ -15,3 +15,4 @@ https://rss2json.com/#rss_url=https%3A%2F%2Fwww.japscan.cc%2Frss%2F
 
 http://apprendre-le-js.com/electron-angular-bootstrap-desktop-music-player/
 
+https://www.dareboost.com/fr/home
