@@ -1,14 +1,15 @@
 (à finir ... )
 
 # Suivi Lecture (SuiviLectureReact)
-[https://csb-5kvll423k4-qlxfskkfcv.now.sh](https://csb-5kvll423k4-qlxfskkfcv.now.sh) 
-[https://suivilecturejapscan.netlify.com/](https://suivilecturejapscan.netlify.com/) (En cours d'ajustement pour passer en JamStack avec Gatsby JS)
+>![https://csb-5kvll423k4-qlxfskkfcv.now.sh](https://csb-5kvll423k4-qlxfskkfcv.now.sh) 
+
+>![https://suivilecturejapscan.netlify.com/](https://suivilecturejapscan.netlify.com/) (En cours d'ajustement pour passer en JamStack avec Gatsby JS)
 
 ## Description
-Il s'agit d'un site développé avec ReactJS et Firebase afin de permettre de suivre l'avancement de lecture des mangas sur le site [http://japscan.com](http://japscan.com).
+Il s'agit d'un site développé avec ReactJS et Firebase afin de permettre de suivre l'avancement de lecture des mangas sur le site ![http://japscan.com](http://japscan.com).
 
 ## Code
-Il a été dévelopé via CodeSandBox : [https://codesandbox.io/s/github/JFeremy/SuiviLectureReact](https://codesandbox.io/s/github/JFeremy/SuiviLectureReact)
+Il a été dévelopé via CodeSandBox : ![https://codesandbox.io/s/github/JFeremy/SuiviLectureReact](https://codesandbox.io/s/github/JFeremy/SuiviLectureReact)
 
 ## Impressions d'écran
 ### Ecran de connexion
